@@ -2,7 +2,7 @@
 
 This repository contains the code, report, fixed data pipeline, configurations,
 and evidence for the submitted MP1 predictor. The matching checkpoint is
-distributed separately as `MP1_checkpoint_bundle_20260926.zip` so it can be
+distributed separately as `MP1_checkpoint_bundle_20260926_FINAL.zip` so it can be
 downloaded and evaluated without retraining.
 
 ## Final result
