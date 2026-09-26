@@ -58,6 +58,7 @@ CUDA wheel before the remaining requirements:
 ```
 
 ## Reproduce the submitted score without retraining
+The directory names below are examples. Replace them with the actual extracted directory names when running the commands.
 
 Extract the code and checkpoint archives beside each other:
 
