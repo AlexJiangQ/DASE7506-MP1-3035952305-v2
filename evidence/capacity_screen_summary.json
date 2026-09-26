@@ -1,0 +1,33 @@
+{
+  "stage": "capacity_screen_1200_and_validation_resources",
+  "status": "complete",
+  "protocol": {
+    "seed": 17,
+    "updates": 1200,
+    "effective_batch_size": 32,
+    "context": 256,
+    "lr": 0.001,
+    "device": "GPU FP32 training / CPU FP32 validation",
+    "resource_repeats": 3,
+    "baseline_median_validation_seconds": 10.310488499992061,
+    "test_run": false
+  },
+  "models": [
+    {"scale": "192x6", "bpb": 1.728211969776103, "median_validation_seconds": 24.348613500013016, "cpu_ratio": 2.3615383015103273, "checkpoint_bytes": 13857205, "resource_status": "pass"},
+    {"scale": "224x6", "bpb": 1.7118053001026365, "median_validation_seconds": 32.631896600010805, "cpu_ratio": 3.164922457363289, "checkpoint_bytes": 18269365, "resource_status": "pass"},
+    {"scale": "256x6", "bpb": 1.6965523713602202, "median_validation_seconds": 49.58851049997611, "cpu_ratio": 4.80952095528881, "checkpoint_bytes": 23136373, "resource_status": "hard-limit-pass_but_safety-risk"},
+    {"scale": "288x6", "bpb": 1.6784893721568763, "median_validation_seconds": 55.68822489999002, "cpu_ratio": 5.401123807085658, "checkpoint_bytes": 28735093, "resource_status": "reject_cpu_over_5x"},
+    {"scale": "320x6", "bpb": 1.6728912528133641, "median_validation_seconds": 65.7562890999834, "cpu_ratio": 6.377611409976747, "checkpoint_bytes": 34935157, "resource_status": "reject_cpu_over_5x"},
+    {"scale": "384x6", "bpb": 1.670898793218953, "median_validation_seconds": 87.9893269999884, "cpu_ratio": 8.533962964029897, "checkpoint_bytes": 48921205, "resource_status": "reject_cpu_over_5x"}
+  ],
+  "selection": {
+    "best_inside_internal_4p5x_safety_line": "224x6",
+    "best_bpb_below_hard_5x_limit": "256x6",
+    "recommendation": "Use 224x6 as the conservative candidate; 256x6 is an optional high-risk candidate requiring a fresh final resource qualification. Do not train 288x6 or larger for submission under this host's scorer timing."
+  },
+  "notes": [
+    "All measurements are validation-only; no test split was evaluated.",
+    "CPU ratios are validation screening ratios and final test qualification can vary by workload and host.",
+    "The 384x6 model has the lowest validation BPB in this short screen but is clearly infeasible under the CPU ratio limit."
+  ]
+}

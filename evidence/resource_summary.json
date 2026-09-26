@@ -1,0 +1,18 @@
+{
+  "protocol": "formal-test-resource-recheck",
+  "reason": "Explicitly user-authorized repeat of the identical frozen candidate after the first monitors observed only the venv launcher. The calibrated monitor sums launcher and descendant Python working sets. This repeat is not used for selection.",
+  "checkpoint": "checkpoint.pt",
+  "checkpoint_sha256": "5414d777646765f4429b7f59af832edb92df2acb5e17d32cd33a41d67d191b4e",
+  "bpb": 1.5194970322432222,
+  "seconds": 55.05002379999496,
+  "max_process_tree_working_set_bytes": 1868443648,
+  "samples": 137,
+  "baseline_first_run_seconds": 12.570789500023238,
+  "candidate_first_run_seconds": 52.228072899975814,
+  "first_run_cpu_ratio": 4.154717004837227,
+  "threads": 4,
+  "precision": "fp32",
+  "split": "test",
+  "selection_locked_before_test": true,
+  "test_run": true
+}

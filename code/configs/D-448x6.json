@@ -1,0 +1,9 @@
+{
+  "vocab": 2048,
+  "context": 256,
+  "width": 448,
+  "depth": 6,
+  "heads": 7,
+  "position_encoding": "rope",
+  "ffn_type": "swiglu"
+}

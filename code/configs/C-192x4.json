@@ -1,0 +1,9 @@
+{
+  "vocab": 2048,
+  "context": 256,
+  "width": 192,
+  "depth": 4,
+  "heads": 4,
+  "position_encoding": "learned",
+  "ffn_type": "swiglu"
+}

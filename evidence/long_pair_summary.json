@@ -1,0 +1,51 @@
+{
+  "stage": "matched_long_pair_seed17_6000",
+  "status": "complete",
+  "protocol": {
+    "width": 192,
+    "depth": 6,
+    "seed": 17,
+    "updates": 6000,
+    "context": 256,
+    "effective_batch_size": 32,
+    "lr": 0.001,
+    "device": "GPU FP32",
+    "validation_every": 600,
+    "selection_steps": [1200, 1800, 2400, 3000, 3600, 4200, 4800, 5400, 6000],
+    "test_run": false
+  },
+  "runs": [
+    {
+      "run": "long-D-192x6-lr0p001-s17-6000",
+      "structure": "RoPE + SwiGLU",
+      "selected_step": 4200,
+      "selected_bpb": 1.625998059979308,
+      "endpoint_step": 6000,
+      "endpoint_bpb": 1.6342905852001717,
+      "process_seconds": 919.82022449997,
+      "checkpoint_sha256": "4c6c995e8ed03c8041b83a31b8397e7dab7f7fe294826124356b7363475f0cbd",
+      "complete": true,
+      "failures": 0
+    },
+    {
+      "run": "long-A-192x6-lr0p001-s17-6000",
+      "structure": "Learned position + GELU",
+      "selected_step": 6000,
+      "selected_bpb": 1.6237218470832373,
+      "endpoint_step": 6000,
+      "endpoint_bpb": 1.6237218470832373,
+      "process_seconds": 772.590944099997,
+      "checkpoint_sha256": "838da971d26fbb1c5a7f21168be979a693ba0ad22445817bf5561a409ea54f58",
+      "complete": true,
+      "failures": 0
+    }
+  ],
+  "comparison": {
+    "selected_bpb_difference_D_minus_A": 0.0022762128960707,
+    "interpretation": "At this seed and matched capacity/budget, D is slightly worse than A under the validation-selected rule; this is not a test result and does not overturn the earlier 3600-step D screening result."
+  },
+  "notes": [
+    "Both runs started from random initialization and used identical data schedule, optimizer budget, and selection rule.",
+    "No test split was evaluated; no additional seeds or automatic follow-up training was started."
+  ]
+}

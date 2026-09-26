@@ -1,0 +1,46 @@
+{
+  "protocol": "7506-mp1-wt2-v2",
+  "status": "complete_and_stopped",
+  "seeds": [17, 42, 123],
+  "updates_per_run": 1200,
+  "targets_per_run": 9830400,
+  "training": "GPU FP32",
+  "evaluation": "one full endpoint CPU FP32 validation per run; no test",
+  "bpb_by_group_and_seed": {
+    "A": {"17": 2.0710818039923007, "42": 2.076094715390338, "123": 2.0776181746033253},
+    "B": {"17": 1.917929468425014, "42": 1.9279516479318664, "123": 1.9191103316299225},
+    "C": {"17": 2.0126716339223947, "42": 2.0035654992095426, "123": 2.008804205779232},
+    "D": {"17": 1.8344298352715451, "42": 1.8366261438587201, "123": 1.8297940196664728}
+  },
+  "mean_bpb": {"A": 2.074931564661988, "B": 1.921663815995601, "C": 2.0083471129703896, "D": 1.8336166662655793},
+  "sample_sd_bpb_ddof1": {"A": 0.00341990130030275, "B": 0.005477338068917749, "C": 0.00457024318051826, "D": 0.0034878952276079485},
+  "paired_effects_bpb_by_seed": {
+    "B_minus_A": [-0.15315233556728658, -0.1481430674584716, -0.1585078429734028],
+    "C_minus_A": [-0.05841017006990601, -0.07252921618079533, -0.06881396882409341],
+    "D_minus_A": [-0.23665196872075556, -0.23946857153161782, -0.2478241549368525],
+    "interaction_D_minus_C_minus_B_plus_A": [-0.02508946308356297, -0.018796287892350882, -0.02050234313935606]
+  },
+  "paired_effect_means_bpb": {
+    "B_minus_A": -0.153267748666387,
+    "C_minus_A": -0.06658445169159825,
+    "D_minus_A": -0.24131489839640863,
+    "interaction_D_minus_C_minus_B_plus_A": -0.021462698038423305
+  },
+  "selection": {
+    "winner": "D",
+    "rule": "Lowest mean validation BPB; tie threshold not invoked.",
+    "note": "Three seeds support stability assessment but no statistical-significance claim."
+  },
+  "integrity": {
+    "completed_runs": 12,
+    "expected_runs": 12,
+    "updates_per_run_verified": true,
+    "one_validation_per_run_verified": true,
+    "failures": 0,
+    "all_checkpoint_hashes_verified": true,
+    "all_source_hash_sets_match": true,
+    "within_seed_data_schedules_match": true,
+    "test_calls": 0,
+    "python_process_count_after_completion": 0
+  }
+}

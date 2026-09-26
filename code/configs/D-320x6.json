@@ -1,0 +1,10 @@
+{
+  "vocab": 2048,
+  "context": 256,
+  "width": 320,
+  "depth": 6,
+  "heads": 5,
+  "position_encoding": "rope",
+  "ffn_type": "swiglu",
+  "swiglu_hidden": 856
+}
